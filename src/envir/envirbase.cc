@@ -1252,6 +1252,7 @@ void EnvirBase::startOutputRedirection(const char *fileName)
        throw cRuntimeError("Cannot open output redirection file '%s'", fileName);
     out.rdbuf(fbuf);
     redirectionFilename = fileName;
+    outputRedirected = true;
 }
 
 void EnvirBase::stopOutputRedirection()
@@ -1262,12 +1263,13 @@ void EnvirBase::stopOutputRedirection()
         out.rdbuf(std::cout.rdbuf());
         delete fbuf;
         redirectionFilename = "";
+        outputRedirected = false;
     }
 }
 
 bool EnvirBase::isOutputRedirected()
 {
-    return out.rdbuf() != std::cout.rdbuf();
+    return outputRedirected;
 }
 
 std::ostream& EnvirBase::err()

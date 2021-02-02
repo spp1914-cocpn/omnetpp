@@ -132,6 +132,7 @@ class ENVIR_API EnvirBase : public cRunnableEnvir
 
     std::ostream out;
     std::string redirectionFilename;
+    bool outputRedirected = false;
 
 #ifdef WITH_PARSIM
     cParsimCommunications *parsimComm;
