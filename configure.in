@@ -124,7 +124,7 @@ AC_CANONICAL_HOST()
 OMNETPP_PRODUCT="OMNeT++"
 OMNETPP_RELEASE=`cat Version`
 OMNETPP_VERSION=`cat Version | sed 's/^.*-//'`
-OMNETPP_BUILDID="200207-b15dab9895"
+OMNETPP_BUILDID="200518-aa79d0918f"
 
 #
 # Edition identifier in banner: Academic / Commercial / Evaluation
