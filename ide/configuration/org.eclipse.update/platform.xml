@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1581076010712" transient="false">
+<config date="1589808087354" transient="false">
 	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
 		<feature id="org.eclipse.cdt.gnu.dsf" version="9.10.0.201911251701" url="features/org.eclipse.cdt.gnu.dsf_9.10.0.201911251701/">
 		</feature>
@@ -29,7 +29,7 @@
 		</feature>
 		<feature id="org.eclipse.help" version="2.3.0.v20191210-0610" url="features/org.eclipse.help_2.3.0.v20191210-0610/" plugin-identifier="org.eclipse.help.base">
 		</feature>
-		<feature id="org.omnetpp.ide" version="5.6.1.200207-b15dab9895" url="features/org.omnetpp.ide_5.6.1.200207-b15dab9895/">
+		<feature id="org.omnetpp.ide" version="5.6.2.200518-aa79d0918f" url="features/org.omnetpp.ide_5.6.2.200518-aa79d0918f/">
 		</feature>
 		<feature id="org.eclipse.emf.ecore.edit" version="2.14.0.v20190822-1451" url="features/org.eclipse.emf.ecore.edit_2.14.0.v20190822-1451/">
 		</feature>
@@ -45,7 +45,7 @@
 		</feature>
 		<feature id="org.eclipse.draw2d" version="3.10.100.201606061308" url="features/org.eclipse.draw2d_3.10.100.201606061308/">
 		</feature>
-		<feature id="org.omnetpp.ide.source" version="5.6.1.200207-b15dab9895" url="features/org.omnetpp.ide.source_5.6.1.200207-b15dab9895/">
+		<feature id="org.omnetpp.ide.academic" version="5.6.2.200518-aa79d0918f" url="features/org.omnetpp.ide.academic_5.6.2.200518-aa79d0918f/" plugin-identifier="org.omnetpp.main">
 		</feature>
 		<feature id="org.eclipse.cdt.platform" version="9.10.0.201912051559" url="features/org.eclipse.cdt.platform_9.10.0.201912051559/">
 		</feature>
@@ -57,7 +57,7 @@
 		</feature>
 		<feature id="org.eclipse.platform" version="4.14.0.v20191210-0610" url="features/org.eclipse.platform_4.14.0.v20191210-0610/">
 		</feature>
-		<feature id="org.omnetpp.ide.academic" version="5.6.1.200207-b15dab9895" url="features/org.omnetpp.ide.academic_5.6.1.200207-b15dab9895/" plugin-identifier="org.omnetpp.main">
+		<feature id="org.omnetpp.ide.source" version="5.6.2.200518-aa79d0918f" url="features/org.omnetpp.ide.source_5.6.2.200518-aa79d0918f/">
 		</feature>
 		<feature id="org.eclipse.equinox.p2.user.ui" version="2.4.600.v20191120-0247" url="features/org.eclipse.equinox.p2.user.ui_2.4.600.v20191120-0247/">
 		</feature>

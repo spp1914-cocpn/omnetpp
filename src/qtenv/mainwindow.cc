@@ -14,6 +14,11 @@
   `license' for details on this and other legal matters.
 *--------------------------------------------------------------*/
 
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+#include <algorithm>
+
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QToolTip>
@@ -23,17 +28,20 @@
 #include <QLineEdit>
 #include <QDialogButtonBox>
 #include <QFileDialog>
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "runselectiondialog.h"
-#include "treeitemmodel.h"
+#include <QCheckBox>
+#include <QDebug>
+#include <QToolButton>
+
 #include "omnetpp/csimplemodule.h"
 #include "omnetpp/csimulation.h"
 #include "omnetpp/cfutureeventset.h"
 #include "omnetpp/cscheduler.h"
-#include "inspector.h"
 #include "common/stringutil.h"
 #include "common/ver.h"
+
+#include "runselectiondialog.h"
+#include "treeitemmodel.h"
+#include "inspector.h"
 #include "stopdialog.h"
 #include "inspectorutil.h"
 #include "genericobjectinspector.h"
@@ -49,10 +57,6 @@
 #include "displayupdatecontroller.h"
 #include "videorecordingdialog.h"
 #include "qtutil.h"
-
-#include <QCheckBox>
-#include <QDebug>
-#include <QToolButton>
 
 #define emit
 
@@ -1050,14 +1054,14 @@ void MainWindow::configureNetwork()
         if (t && t->isNetwork())
             networks.push_back(t);
     }
-    const char *localPackage = getQtenv()->getLocalPackage().c_str();
+    std::string localPackage = getQtenv()->getLocalPackage();
     QStringList networkNames;
     QStringList localNetworkNames;
     for (cModuleType *net : networks) {
         const char *networkName = net->getName();
         const char *networkQName = net->getFullName();
         char result[100];
-        strcpy(result, localPackage);
+        strcpy(result, localPackage.c_str());
         strcat(result, ".");
         strcat(result, networkName);
         if (strcmp(result, networkQName) == 0)
@@ -1071,8 +1075,8 @@ void MainWindow::configureNetwork()
                         return arg1.toLower() < arg2.toLower();
                     };
 
-    qSort(localNetworkNames.begin(), localNetworkNames.end(), lessThan);
-    qSort(networkNames.begin(), networkNames.end(), lessThan);
+    std::sort(localNetworkNames.begin(), localNetworkNames.end(), lessThan);
+    std::sort(networkNames.begin(), networkNames.end(), lessThan);
     networkNames = localNetworkNames << networkNames;
 
     // pop up dialog, with current network as default
